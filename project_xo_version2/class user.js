@@ -24,6 +24,9 @@ var User = (function () {
     };
     //////////////////////////////////////////////////////////////////////////////
     User.prototype.user_turn = function () {
+        /*
+         בתור השחקן מבתצעת בדיקה של תוכן הטקסט שהמשתש הכניס ורק במידה וקלט תקין, הפונקציה תתקדם
+         */
         var str = prompt("enter number");
         if (Number(str) > 9) {
             alert("the number you enterd is bigger then 9");
@@ -43,7 +46,7 @@ var User = (function () {
             alert("you didnt enterd a full number");
             return false;
         }
-        var serch = false;
+        var serch = false; //בדיקה אחרונה של האם הקלט שהתקבל באמת קיים במטריצה-אם לא זה אומר שהערך נבחר כבר
         for (var i = 0; i < this.user_mat.length; i++) {
             for (var j = 0; j < this.user_mat[i].length; j++) {
                 if (Number(str) == Number(this.user_mat[i][j])) {

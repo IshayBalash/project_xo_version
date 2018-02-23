@@ -33,6 +33,12 @@ var Computer = (function () {
     };
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     Computer.prototype.Computer_turn = function () {
+        /*
+        בתור המחשב יש שלושה שלבים:
+        בדיקה של האם ניתן לנצח, במידה ולא
+        בדיקה של האם יש אפשרות להפסד בתור הבא במידה ולא
+        בחירת ערך ריק בצורה רנדומלית במטריצת המחשב
+        */
         for (var i = 0; i < this.Player_Mat.length; i++) {
             var counter = 0;
             var temp = void 0;
@@ -70,7 +76,7 @@ var Computer = (function () {
             var counter = 0;
             var temp = void 0;
             for (var j = 0; j < this.Player_Mat[i].length; j++) {
-                if (this.Player_Mat[i][j] == "x" /*|| this.Player_Mat[i][j] == "o"*/) {
+                if (this.Player_Mat[i][j] == "x") {
                     temp = this.Player_Mat[i][j];
                     break;
                 }
